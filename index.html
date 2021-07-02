@@ -55,7 +55,7 @@
           <a class="page-scroll" href="#search" data-toggle="modal">Search</a>
         </li>
         <li>
-          <a class="page-scroll" href="https://applications.inseri.swiss" target="_blank">Log In</a>
+          <a class="page-scroll" href="https://apps.inseri.swiss" target="_blank">Log In</a>
         </li>
         <li>
           <a class="page-scroll" href="#contact">Contact</a>
@@ -259,48 +259,50 @@
       <div >
         <!-- Project Details Go Here -->
 
-        <input class=" btn " placeholder="Search Term">
-        <a  class=" btn "><i class="fa fa-search"></i></a>
+        <input class=" btn " placeholder="Search Term" id="myInput" onkeyup="myFunction()">
 
         <br><br><br>
 
-          <p id="demo"></p>
+<ul id="myUL" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+</ul>
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("h4");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
 
             <script>
+
+
             const cars = [
                 {
-                  "name": "Sparql Visualiser",
-                  "description": "This inseri app enables you to import your SWT data and visualise it"
-                },
-                {
-                  "name": "Python Word count",
-                  "description": "This inseri app enables you to analyse the word lenghts of your text with Python"
-                },
-                {
-                  "name": "E-Codices Connector",
-                  "description": "Import Books and comment on them for your research"
-                },
-                {
-                  "name": "Europeana Connector",
-                  "description": "Import Books and comment on them for your research"
-                },
-                {
-                  "name": "E-Transcriptiones Connector",
-                  "description": "Import Books and comment on them for your research"
-                },
-                {
-                  "name": "Cambridge Connector",
-                  "description": "Import Books and comment on them for your research"
-              }
+                  "name": "e-codices reader",
+                  "description": "This application enables you to visualise a book from e-codices, and add own comments to the single pages.",
+                  "link": "https://inseri.swiss/page?actionID=5f16dcad107b8a8b946898db&page=5f16ddf1107b8a8b946898e1&5f16dcbe107b8a8b946898de=0&5f27f72eb2be6217156bf6a4=0"
+                }
               ];
 
             let text = "";
             for (let i = 0; i < cars.length; i++) {
-              text += "<h4><a  ><span style='cursor: pointer'>" +  cars[i].name + "</span></a></h4>"
-              + cars[i].description + "<br><br>" ;
+              text += "<h4><a href=' " + cars[i].link + "' target='_blank' style='text-decoration: none!important' ><span style='cursor: pointer'>" +  cars[i].name + "</span><br><br><span style='font-weight: normal!important; text-transform: none!important; color: grey!important; cursor: pointer;'>"
+              + cars[i].description + "</span></a></h4><br><br>" ;
             }
 
-            document.getElementById("demo").innerHTML = text;
+            document.getElementById("myUL").innerHTML += text;
             </script>
       </div>
     </div>
