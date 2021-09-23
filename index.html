@@ -82,6 +82,107 @@
   </div>
 </header>
 
+<!-- About Section -->
+    <section id="ontologien">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Conferences and publications</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="timeline">
+                        <li>
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    
+                                    <h4 class="subheading">August 2021 <br> Nature Communications</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">inseri supported this publication by providing a front-end where users can try out the algorithm. You can find the publication <a href="https://doi.org/10.1038/s41467-021-25375-z" target="_blank">here</a></p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="img/about/2.jpg" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    
+                                    <h4 class="subheading">July 2021 <br> Harvard University </h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">This article is about inseri as a potential IT framework for research projects in the Humanities. You can find the publication <a href="https://classics-at.chs.harvard.edu/classics18-serbaeva-cools-stoffregen-padlina/" target="_blank">here</a></p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="img/about/3.jpg" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    
+                                    <h4 class="subheading">November 2020 <br> Swiss Scolarly Edition Infrastructure Conference </h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted"> 22 YouTube Videos where inseri is being presented in detail. You can find the videos <a href="https://www.youtube.com/playlist?list=PLkCga6LPxdgrZwu0xBxsZEJauJ8_pq8ru" target="_blank">here</a></p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="img/about/4.jpg" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    
+                                    <h4 class="subheading">October 2020 <br> Open Access In Action </h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">A Swissuniversities Conference where the Open Access Call was launched for the next funding cycle of Swissuniversities.</p>
+                                </div>
+                            </div>
+                        </li>
+                                                <li>
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="img/about/5.jpeg" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    
+                                    <h4 class="subheading">September 2020 <br> Virtual research environments and ancient manuscripts </h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted"> A conference from the University of Lausanne where inseri was presented. You can find the list of presentations <a href="https://claireclivaz.hypotheses.org/930" target="_blank">here</a></p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="img/about/6.jpeg" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    
+                                    <h4 class="subheading">April 2020 <br> Digitisation of newspapers collections  </h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">A Conference from the University of Luxembourg, where inseri was presented. You can find the lineup  <a href="https://impresso.github.io/eldorado/online-program/" target="_blank">here</a></p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
 <!-- Portfolio Grid Section -->
 <section id="vision" class="bg-light-gray">
@@ -220,12 +321,12 @@
       </div>
       <div class="col-md-3 col-sm-6">
         <a href="#">
-          <img src="img/ubbasel.png" class="img-responsive img-centered" alt="">
+          <img src="img/enhancer.png" class="img-responsive img-centered" alt="">
         </a>
       </div>
       <div class="col-md-3 col-sm-6">
         <a href="#">
-          <img src="img/dasch.png" class="img-responsive img-centered" alt="">
+          <img src="img/piaget.png" class="img-responsive img-centered" alt="">
         </a>
       </div>
     </div>
@@ -238,7 +339,7 @@
     <div class="row">
       <div class="col-lg-12 text-center">
         <h2 class="section-heading">Contact Us</h2>
-        <a href="https://www.zi.uzh.ch/en/teaching-and-research/science-it/about/contact.html" target="_blank" class="page-scroll btn btn-xl">Click here to contact us</a>
+        <a href="mailto:inseri-contact@s3it.lists.uzh.ch" class="page-scroll btn btn-xl">Click here to contact us</a>
       </div>
     </div>
   </div>
@@ -287,18 +388,15 @@ function myFunction() {
 
             <script>
 
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open( "GET", "https://node.inseri.swiss/api/actions/featured", false ); // false for synchronous request
+            xmlHttp.send( null );
 
-            const cars = [
-                {
-                  "name": "e-codices reader",
-                  "description": "This application enables you to visualise a book from e-codices, and add own comments to the single pages.",
-                  "link": "https://inseri.swiss/page?actionID=5f16dcad107b8a8b946898db&page=5f16ddf1107b8a8b946898e1&5f16dcbe107b8a8b946898de=0&5f27f72eb2be6217156bf6a4=0"
-                }
-              ];
+            const cars = JSON.parse( xmlHttp.responseText ).pages;
 
             let text = "";
-            for (let i = 0; i < cars.length; i++) {
-              text += "<h4><a href=' " + cars[i].link + "' target='_blank' style='text-decoration: none!important' ><span style='cursor: pointer'>" +  cars[i].name + "</span><br><br><span style='font-weight: normal!important; text-transform: none!important; color: grey!important; cursor: pointer;'>"
+            for (let i = cars.length - 1; i >= 0; i--) {
+              text += "<h4><a href=' " + "https://apps.inseri.swiss/playground?page=" + cars[i].id + "' target='_blank' style='text-decoration: none!important' ><span style='cursor: pointer'>" +  cars[i].title + "</span><br><br><span style='font-weight: normal!important; text-transform: none!important; color: grey!important; cursor: pointer;'>"
               + cars[i].description + "</span></a></h4><br><br>" ;
             }
 
